@@ -23,6 +23,6 @@
 - Kingma 외 (2016), *Improving Variational Inference with Inverse Autoregressive Flow* — [arXiv:1606.04934](https://arxiv.org/abs/1606.04934)
 - Alemi 외 (2018), *Fixing a Broken ELBO* — [arXiv:1711.00464](https://arxiv.org/abs/1711.00464)
 
-장난감 VLAE의 가중치는 페이지에 들어 있는 학습 코드로 미리 학습해 8비트로 넣었습니다.
+장난감 VLAE의 가중치는 페이지에 들어 있는 학습 코드로 미리 학습해 8비트로 줄여 `weights.json`에 따로 두었고, 첫 화면이 뜬 뒤 불러옵니다.
 
 [how-ai-works](https://github.com/dev-jonghoonpark/how-ai-works) 시리즈의 일부입니다.
