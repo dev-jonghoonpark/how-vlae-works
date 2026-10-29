@@ -213,6 +213,11 @@ sup.fn a{text-decoration:none;font-weight:700;padding:0 2px}
   $$\mathcal{L}(x;\theta) = \underbrace{\mathbb{E}_{q(z|x)}\big[\log p(x|z)\big]}_{\text{복원}} \;-\; \underbrace{D_{KL}\big(q(z|x)\,\|\,p(z)\big)}_{\text{정규화}}$$
   <span class="note">식 (2)와 (3)~(4). 첫 항을 음의 복원 오차로, 둘째 항을 정규화로 읽으면 q가 인코더, p(x|z)가 디코더인 “정규화된 오토인코더”가 됩니다. VAE라는 이름이 여기서 왔습니다. 한 가지 더 기억해 둘 등식이 있습니다. \(\log p(x) - \mathcal{L} = D_{KL}(q(z|x)\,\|\,p(z|x))\), 즉 하한과 참값의 차이는 q가 참 사후분포에서 벗어난 정도입니다.</span>
 </div>
+<div class="easy">
+  <span class="lbl">쉽게 보기</span>
+  <h3>잠재 코드 z = 디코더에게 건네는 요약 메모</h3>
+  <p>인코더는 이미지 x를 숫자 몇 개짜리 z로 요약하고, 디코더는 z를 받아 이미지를 다시 그립니다. 정규화 항 \(D_{KL}\)은 메모 길이에 매기는 값이라, z에는 <strong>디코더가 메모 없이는 그릴 수 없는 것</strong>(장난감 데이터라면 모양과 위치)만 남습니다.</p>
+</div>
 <p>2D 이미지에서는 보통 디코더를 픽셀마다 독립인 \(p(x|z) = \prod_i p(x_i|z)\)로 둡니다. 논문은 이 설정이 대개 원래 데이터를 거의 그대로 복원하는 뾰족한 분포를 낳는다고 적습니다. 픽셀끼리의 상관을 디코더가 표현할 수 없으니, 그 상관을 전부 z가 실어 날라야 하기 때문입니다.</p>
 
 <div class="demo">
